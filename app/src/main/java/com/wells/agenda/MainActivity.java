@@ -13,8 +13,6 @@ public class MainActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Toast.makeText(this, "Well Araujo", Toast.LENGTH_LONG).show();
-        TextView aluno = new TextView(this);
-        aluno.setText("Well Araujo");
-        setContentView(aluno);
+        setContentView(R.layout.activity_main);
     }
 }
