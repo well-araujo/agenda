@@ -1,7 +1,13 @@
 package com.wells.agenda;
 
 import android.app.Activity;
+import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,13 +24,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         Toast.makeText(this, "Well Araujo", Toast.LENGTH_LONG).show();
         setContentView(R.layout.activity_main);
-        List<String> alunos = new ArrayList<String>(Arrays.asList("Alex", "Fran", "Jose"));
-        TextView primeiroAluno = findViewById(R.id.textView);
-        TextView segundoAluno = findViewById(R.id.textView2);
-        TextView terceiroAluno = findViewById(R.id.textView3);
-        primeiroAluno.setText(alunos.get(0));
-        segundoAluno.setText(alunos.get(1));
-        terceiroAluno.setText(alunos.get(2));
+        List<String> alunos = new ArrayList<String>(Arrays.asList("Alex", "Fran", "Jose", "Maria", "Ana"));
+        ListView listaDeAlunos = findViewById(R.id.activity_main_lisa_de_alunos);
+        listaDeAlunos.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alunos));
 
     }
 }
